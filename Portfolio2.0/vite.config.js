@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from "path"
+import path from 'path'
 
 export default defineConfig({
+  base: '/Personal-Portfolio2.0/',
   plugins: [react()],
-  base: process.env.BASE_PATH || '/',
   resolve: {
     alias: {
-      "@": path.resolve(process.cwd(), "src"),
+      '@': path.resolve(process.cwd(), 'src'),
     },
   },
 })

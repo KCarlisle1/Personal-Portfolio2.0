@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
+import { HashRouter, Routes, Route, Link } from 'react-router-dom'
 import { ArrowDownRight, ArrowRight, ExternalLink, Github, Linkedin, Mail, Menu, Moon, Shirt, Sparkles, Sun, Music, Music2, Music3, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
@@ -8,6 +9,9 @@ import { Separator } from '@/components/ui/separator'
 import { Sheet, SheetContent } from '@/components/ui/sheet'
 import '@/index.css'
 
+import LiveCoding from './projects/LiveCoding'
+import CuedMood from './projects/CuedMood'
+
 const PROJECTS = [
   {
     title: 'CuedMood',
@@ -15,7 +19,7 @@ const PROJECTS = [
     tags: ['React Native', 'Expo', 'Zustand'],
     tone: 'from-[var(--deep)] via-[var(--pink)] to-[var(--cream)]',
     type: 'mobile',
-    href: '#contact',
+    href: '/projects/cued-mood',
   },
   {
     title: 'ShoutFit',
@@ -70,10 +74,10 @@ const PROJECTS = [
   {
     title: 'Live Coding',
     description: 'Follow me as I experiment with performance, programming and the art of music.',
-    tags: ['JavaScript', 'Creative Coding', 'Music'],
+    tags: ['JavaScript', 'Strudel', 'Music Production'],
     tone: 'from-[var(--ink)] via-[var(--pink)] to-[var(--deep)]',
     type: 'livecoding',
-    href: '#contact',
+    href: '/projects/live-coding',
   },
   {
     title: 'This Portfolio',
@@ -472,6 +476,7 @@ function App() {
   const [lightPreview, setLightPreview] = useState(false)
   const [copiedContact, setCopiedContact] = useState(null)
 
+
   const email = 'katie.carlisle15@gmail.com'
   const phone = '+44 7999 732402'
 
@@ -487,6 +492,7 @@ function App() {
       console.error('Failed to copy contact details:', error)
     }
   }
+
 
   const nav = [
     ['Projects', 'projects'],
@@ -745,25 +751,55 @@ function App() {
                         : ''
                     }>{tag}</Badge>)}
                   </div>
-                  <Button
-                    size="icon"
-                    variant="outline"
-                    onClick={() => {
-                      if (project.href?.startsWith('#')) {
-                        scrollToId(project.href.slice(1))
-                      } else {
-                        window.location.href = project.href
-                      }
-                    }}
-                    aria-label={`Learn more about ${project.title}`}
-                    className={`shrink-0 ${
-                      lightPreview
-                        ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
-                        : 'group-hover:bg-[#c957bc]/10'
-                    }`}
-                  >
-                    <ArrowDownRight size={17} />
-                  </Button>
+                  {project.href?.startsWith('#') ? (
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      onClick={() => scrollToId(project.href.slice(1))}
+                      aria-label={`Learn more about ${project.title}`}
+                      className={`shrink-0 ${
+                        lightPreview
+                          ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
+                          : 'group-hover:bg-[#c957bc]/10'
+                      }`}
+                    >
+                      <ArrowDownRight size={17} />
+                    </Button>
+                  ) : project.href?.endsWith('.html') ? (
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      asChild
+                      aria-label={`View ${project.title} demo`}
+                      className={`shrink-0 ${
+                        lightPreview
+                          ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
+                          : 'group-hover:bg-[#c957bc]/10'
+                      }`}
+                    >
+                      <a
+                        href={`${import.meta.env.BASE_URL}${project.href.replace(/^\/+/, '')}`}
+                      >
+                        <ArrowDownRight size={17} />
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button
+                      size="icon"
+                      variant="outline"
+                      asChild
+                      aria-label={`View ${project.title} demo`}
+                      className={`shrink-0 ${
+                        lightPreview
+                          ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
+                          : 'group-hover:bg-[#c957bc]/10'
+                      }`}
+                    >
+                      <Link to={project.href}>
+                        <ArrowDownRight size={17} />
+                      </Link>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -875,6 +911,12 @@ function App() {
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/projects/live-coding" element={<LiveCoding />} />
+        <Route path="/projects/cued-mood" element={<CuedMood />} />
+      </Routes>
+    </HashRouter>
   </React.StrictMode>,
 )
