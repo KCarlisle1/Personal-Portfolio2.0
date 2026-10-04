@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #f5f0ff;
+  background: #090817;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --deep: #752092;
+  --plum: #9f4dcc;
+  --pink: #c957bc;
+  --lilac: #e9a5e2;
+  --gold: #ffc872;
+  --cream: #ffe3b3;
+  --ink: #090817;
+  --panel: #121024;
+  --line: #2b2648;
+  --text: #f5f0ff;
+  --muted: #b8b1d4;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #090817; }
+* { box-sizing: border-box; }
+
+::selection { background: rgba(201, 87, 188, .35); color: white; }
+
+.grid-glow {
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.85), transparent 72%);
+}
+
+.light-preview .grid-glow {
+  background-image:
+    linear-gradient(rgba(117,32,146,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(117,32,146,.08) 1px, transparent 1px);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #c957bc 10%, #e6a8ff 38%, #ffc872 78%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-orb { filter: drop-shadow(0 0 42px rgba(201, 87, 188, .18)); }
+
+.light-preview .hero-orb {
+  filter: drop-shadow(0 0 42px rgba(255, 200, 114, .18));
+}
+
+.project-image {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.project-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(9,8,23,.45));
+  z-index: -1;
+}
+
+.hero-bubbles {
+  position: absolute;
+  width: 550px;
+  height: 500px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+@media (max-width: 639px) {
+  .hero-bubbles {
+    transform: translate(-50%, -50%) scale(0.65);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-bubbles {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}

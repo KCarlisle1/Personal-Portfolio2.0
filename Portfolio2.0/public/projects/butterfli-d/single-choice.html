@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>BUTTERFLI-D Single-Choice</title>
+    </head>
+    <body>
+        <div id="butterfly-background"></div>
+        <div class="header-bar">
+            <h1 id="sc-page-title" class="page-title">BUTTERFLI-D</h1>
+            <button class="info-btn" id="sc-page-info" title="Show quiz information">Info</button>
+            <button class="home-btn" id="sc-page-home" title="Return to the home page"></button>
+        </div>
+        <div id="info-text-container">
+            <p id="info-text"></p>
+            <div class="fade-background"></div>
+        </div>
+
+        <h1 class="header" id="sc-header">Single Choice Quiz</h1>
+        <p class="tagline" id="sc-tagline">What kind of butterfly is this?</p>
+        <img id="butterfly-image" src="" alt="Butterfly Image">
+
+        <div id="success-container">
+            <div id="success-box-div">
+                <p id="success-box"></p>
+                <button id="restart-btn">Restart?</button>
+            </div>
+            <div class="fade-background" id="success-fade-background"></div>
+        </div>
+
+        <form id="sc-quiz-form">
+            <input type="text" id="sc-choice-input" placeholder="Enter your answer here" required>
+            <button type="submit" class="submit-btn" id="sc-submit-btn">Submit</button>
+        </form>
+        <div class="score-div" id="sc-score-div">
+            <p id="correct-or-incorrect">Your last answer was <span id="c-or-i-span">___</span></p>
+            <p id="score">Your score is <span id="score-text">_</span> out of 58</p>
+        </div>
+        <footer>
+            <p>&copy; Created by Katie Carlisle, 2025</p>
+            <p>All photographs are creative property of Alex Carlisle - email: alexcarlisle44@gmail.com</p>
+        </footer>
+        <script src="sc-script.js"></script>
+    </body>
+</html>

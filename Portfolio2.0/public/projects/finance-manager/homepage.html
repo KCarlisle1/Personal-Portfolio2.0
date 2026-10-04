@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Personal Finance Manager</title>
+    </head>
+    <body>
+        <div id="main-content">
+            <div id="nav-container">
+                <h1 id="page-title">Finance Manager</h1>
+                <nav id="navbar">
+                    <a class="nav-link" href="#dashboard-section">Dashboard</a>
+                    <a class="nav-link" href="#transactions-section">Transaction</a>
+                    <a class="nav-link" href="#budgets-section">Budgets</a>
+                    <a class="nav-link" href="#reports-section">Reports</a>
+                </nav>
+            </div>
+            <section id="dashboard-section">
+                <h2 class="section-title">Dashboard</h2>
+                <div id="ieb-display-container">
+                    <div class="ieb-display-div" id="income-display-div">
+                        <p class="ieb-display-title">Income</p>
+                        <div class="ieb-flex">
+                            <p class="ieb-display-amount" id="ieb-display-income"></p>
+                        </div>
+                    </div>
+                    <div class="ieb-display-div" id="expenses-display-div">
+                        <p class="ieb-display-title">Expenses</p>
+                        <div class="ieb-flex">
+                            <p class="ieb-display-amount" id="ieb-display-expenses"></p>
+                        </div>
+                    </div>
+                    <div class="ieb-display-div" id="balance-display-div">
+                        <p class="ieb-display-title">Balance</p>
+                        <div class="ieb-flex">
+                            <p class="ieb-display-amount" id="ieb-display-balance"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="transactions-section">
+                <h2 class="section-title">Transactions</h2>
+                <div id="add-transaction-container" class="section-container">
+                    <form id="add-transaction-form">
+                        <div id="add-transaction-field-container" class="field-container">
+                            <div class="add-transaction-field form-field">
+                                <label class="form-label" for="add-transaction-amount">Amount</label>
+                                <input class="form-input" id="add-transaction-amount" name="add-transaction-amount" placeholder="£" required />
+                            </div>
+                            <div class="add-transaction-field form-field">
+                                <label class="form-label" for="add-transaction-direction">Direction</label>
+                                <select class="form-input" id="add-transaction-direction" name="add-transaction-direction" required>
+                                    <option value="incoming">Incoming</option>
+                                    <option value="outgoing">Outgoing</option>
+                                </select>
+                            </div>
+                            <div class="add-transaction-field form-field">
+                                <label class="form-label" for="add-transaction-category">Category</label>
+                                <select class="form-input" id="add-transaction-category" name="add-transaction-category" required>
+                                    <option>Income/Salary</option>
+                                    <option>Housing and Bills</option>
+                                    <option>Transportation</option>
+                                    <option>Food</option>
+                                    <option>Clothing</option>
+                                    <option>Healthcare</option>
+                                    <option>Insurance</option>
+                                    <option>Items/Supplies</option>
+                                    <option>Personal</option>
+                                    <option>Debt</option>
+                                    <option>Savings</option>
+                                    <option>Gifts/Donations</option>
+                                    <option>Entertainment</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="add-transaction-field form-field">
+                                <label class="form-label" for="add-transaction-date">Date</label>
+                                <input class="form-input" id="add-transaction-date" name="add-transaction-date" type="date" required />
+                            </div>
+                        </div>
+                        <button type="submit" class="form-submit" id="add-transaction-submit">Add Transaction</button>
+                    </form>
+                </div>
+                <h3 class="subtitle">Transactions List</h3>
+                <div id="transactions-list-container" class="list-container">
+                    <!--Flex grid here in CSS-->
+                    <div id="transactions-list-headings" class="transactions-list-item">
+                        <p>Date</p>
+                        <p>Category</p>
+                        <p>Amount</p>
+                        <p>Remove</p>
+                    </div>
+                    <div id="transactions-list-items-container"></div>
+                </div>
+            </section>
+            <section id="budgets-section">
+                <h2 class="section-title">Budgets</h2>
+                <div id="add-budget-container" class="section-container">
+                    <form id="add-budget-form">
+                        <div id="add-budget-field-container" class="field-container">
+                            <div class="add-budget-field form-field">
+                                <label class="form-label" for="add-budget-category">Category</label>
+                                <select class="form-input" id="add-budget-category" name="add-budget-category" required>
+                                    <option>Housing and Bills</option>
+                                    <option>Transportation</option>
+                                    <option>Food</option>
+                                    <option>Clothing</option>
+                                    <option>Healthcare</option>
+                                    <option>Insurance</option>
+                                    <option>Items/Supplies</option>
+                                    <option>Personal</option>
+                                    <option>Debt</option>
+                                    <option>Savings</option>
+                                    <option>Gifts/Donations</option>
+                                    <option>Entertainment</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="add-budget-field form-field">
+                                <label class="form-label" for="add-budget-amount">Amount</label>
+                                <input class="form-input" id="add-budget-amount" name="add-budget-amount" placeholder="£" required />
+                            </div>
+                            <div class="add-budget-field form-field"></div>
+                        </div>
+                        <button type="submit" class="form-submit" id="add-budget-submit">Add Budget</button>
+                    </form>
+                </div>
+                <h3 class="subtitle">Budgets List</h3>
+                <div id="budgets-list-container" class="list-container">
+                    <!--Flex Grid here in CSS-->
+                    <div id="budgets-list-headings" class="budgets-list-item">
+                        <p>Category</p>
+                        <p>Budget</p>
+                        <p>Used</p>
+                        <p>Available</p>
+                        <p>Remove</p>
+                    </div>
+                    <div id="budgets-list-items-container"></div>
+                </div>
+            </section>
+            <section id="reports-section">
+                <h2 class="section-title">Reports</h2>
+                <h3 class="subtitle">Income vs Expenses</h3>
+                <div id="ive-container" class="section-container">
+                    <div id="ive-flex-container">
+                        <ul id="ive-amount-labels"></ul>
+                        <div id="ive-border">
+                            <ul id="ive-bars-container"></ul>
+                            <ul id="ive-points-container"></ul>
+                            <svg id="ive-line-connector"></svg>
+                            <ul id="ive-bar-labels"></ul>
+                        </div>
+                    </div>
+                    <div id="ive-key-container">
+                        <div class="ive-key-item">
+                            <div class="ive-key-color" id="ive-key-income-color"></div>
+                            <p>Income</p>
+                        </div>
+                        <div class="ive-key-item">
+                            <div class="ive-key-color" id="ive-key-expenses-color"></div>
+                            <p>Expenses</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="chart-flex-container">
+                    <div id="balance-report-container" class="section-container">
+                        <h3 class="subtitle">Balance Report</h3>
+                        <div id="balance-flex-container">
+                            <ul id="balance-amount-labels"></ul>
+                            <div id="balance-border">
+                                <div id="balance-bars-wrapper">
+                                    <div id="balance-zero-line"></div>
+                                    <ul id="balance-bars-container"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ieb-comparison-container" class="section-container">
+                        <h3 class="subtitle">IEB Comparison</h3>
+                        <p id="i-comparison-display" class="ieb-comparison-display">Income - <span id="i-comparison-display-span"></span></p>
+                        <p id="e-comparison-display" class="ieb-comparison-display">Expenses - <span id="e-comparison-display-span"></span></p>
+                        <p id="b-comparison-display" class="ieb-comparison-display">Balance - <span id="b-comparison-display-span"></span></p>
+                        <p id="ieb-comparison-time-frame"></p>
+                    </div>
+                    <div id="spending-by-category-container" class="section-container">
+                        <h3 class="subtitle">Spending by Category</h3>
+                        <div id="pie-chart-container">
+                            <div id="pie-chart-border">
+                                <ul id="pie-chart-slices-container"></ul>
+                            </div>
+                        </div>
+                        <ul id="pie-chart-key"></ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <p>&copy; Created by Katie Carlisle, 2025</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

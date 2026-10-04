@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title><BUTTERFLI-D></title>
+    </head>
+
+    <body>
+        <div id="butterfly-background"></div>
+        <div class="header-bar">
+            <h1 class="page-title" id="home-page-title">BUTTERFLI-D</h1>
+            <button class="info-btn" id="home-page-info" title="Show website information">Info</button>
+            <div id="info-text-container">
+                 <p id="info-text"></p>
+                 <div class="fade-background"></div>
+            </div>
+        </div>
+        <p class="header" id="home-page-header">Test your abilities in native British butterfly identification!</p>
+
+        <fieldset id="quiz-select-fieldset">
+            <legend id="quiz-select-legend">Choose your quiz!</legend>
+            <form id="quiz-select-form" action="quiz.html" method="get">
+                <div class="quiz-choice">
+                    <button type="submit" class="quiz-choice-btn" id="mc">Multiple Choice</button>
+                    <button type="button" class="info-btn quiz-info" id="mc-info" title="What's this quiz?">?</button>
+                </div>
+                <div class="quiz-choice">
+                    <button type="submit" class="quiz-choice-btn" id="sc">Single Choice</button>
+                    <button type="button" class="info-btn quiz-info" id="sc-info" title="What's this quiz?">?</button>                    
+                </div>
+                <div class="quiz-choice">
+                    <button type="submit" class="quiz-choice-btn" id="index">Index</button>
+                    <button type="button" class="info-btn quiz-info" id="index-info" title="What's this?">?</button>                   
+                </div>
+            </form>
+        </fieldset>
+
+        <footer id="home-page-footer">
+            <p>&copy; Created by Katie Carlisle, 2025</p>
+            <p>All photographs are creative property of Alex Carlisle - email: alexcarlisle44@gmail.com</p>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

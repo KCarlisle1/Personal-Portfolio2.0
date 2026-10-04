@@ -1,0 +1,648 @@
+:root{
+    --green0: #e5f4e3;
+    --green1: #c2e8b1;
+    --green2: #99d78f;
+    --green3: #66c266;
+    --green4: #3da45e;
+    --green5: #206832;
+    --orange0: #f1e1b7;
+    --orange1: #f4c300;
+    --orange2: #e9a400;
+    --orange3: #d67c00;
+    --orange4: #a85f00;
+    --orange5: #6e3900;
+}
+
+html{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+    background: linear-gradient(to bottom, var(--green0), var(--green3));
+    text-align: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#butterfly-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Photos/ButterflyBackground001.PNG');
+    background-repeat: repeat;
+    background-size: 400px 400px;
+    background-position: top left;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.page-title{
+    display: inline-block;
+    text-align: center;
+    text-shadow: 2px 2px 2px white;
+    color: var(--orange3);
+    border: 2.5px solid var(--orange3);
+    border-radius: 5px;
+    background-color: var(--orange1);
+    box-shadow: inset 0 0 10px var(--orange0); 
+}
+
+.header{
+    display: inline-block;
+    border: 2px solid var(--green2);
+    color: var(--green5);
+    text-shadow: 1px 1px 2px white;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, var(--green0), var(--green1));
+}
+
+.info-btn{
+    position: absolute;
+    background-color: var(--orange1);
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: solid 2px var(--orange3);
+    cursor: pointer;
+    font-size: 14px;
+    text-shadow: 1px 1px 2px var(--orange4);
+    text-align: center;
+    z-index: 800;
+    box-shadow: inset 0 0 10px white;
+}
+
+.info-btn:hover{
+    background-color: var(--orange2);
+}
+
+.home-btn{
+    position: absolute;
+    background-image: url(Photos/HomeButton001.PNG);
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    border: solid 2px var(--green5);
+    cursor: pointer;
+    top: 50px;
+    left: 30px;
+    z-index: 1500;
+}
+
+.home-btn:hover{
+    background-image: url(Photos/HomeButton002.PNG);
+    box-shadow: 0 0 10px var(--green5);
+}
+
+.tagline{
+    font-size: 2em;
+    padding: 5px;
+    margin-top: 20px;
+    text-shadow: 1px 1px 10px white;
+    color: var(--orange5);
+}
+
+.submit-btn{
+    background-color: var(--green2);
+    color: var(--green5);
+    text-shadow: 1px 1px 2px white;
+    border: 3px solid var(--green5);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--green4);
+    margin-top: 20px;
+}
+
+.submit-btn:hover{
+    background-color: var(--green3);
+    color: white;
+    box-shadow: 0 0 15px var(--green5);
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    color: var(--green5);
+    font-size: 0.8em;
+    padding: 10px;
+    background-color: var(--green1);
+    border-top: 2px solid var(--green3);
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    z-index: 500;
+}
+
+.fade-background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+}
+
+/*Homepage CSS*/
+
+
+#home-page-title, #index-page-title{
+    font-size: 4.5em;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+#home-page-info, #index-page-info{
+    top: 60px;
+    right: 30px;
+    font-size: 14px;
+}
+
+#info-text-container{
+    display: none;
+    position: relative;
+    z-index: 1000;
+}
+
+#info-text{
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, var(--green1), white);
+    color: var(--orange4);
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 1.2em;
+    z-index: 1000;
+}
+
+#home-page-header{
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+#quiz-select-fieldset{
+    margin: 0 auto;
+    margin-top: 50px;
+    background: linear-gradient(to bottom, var(--green1), var(--green4));
+    padding: 20px;
+    border-radius: 5px;
+    display: block;
+    width: 50%;
+    border: 2px solid var(--green4);
+}
+
+#quiz-select-legend{
+    font-size: 1.5em;
+    text-align: left;
+    color: var(--green5);
+    text-shadow: 0 0 5px white;
+    font-weight: bold;
+}
+
+#quiz-select-form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    width: 100%;
+}
+
+.quiz-choice{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    width: 100%;
+
+}
+
+.quiz-choice-btn {
+    background-color: var(--orange0);
+    color: var(--orange5);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--green5);
+    width: 65%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#index{
+    background-color: var(--green1);
+}
+
+.quiz-choice-btn:hover {
+    background-color: var(--orange2);
+    color: white;
+    box-shadow: 0 0 15px var(--orange3);
+}
+
+
+#index:hover{
+    background-color: var(--orange2);
+    color: white;
+    box-shadow: 0 0 15px var(--orange3);
+}
+
+.quiz-info {
+    color: var(--orange5);
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+    position: absolute;
+    right: 20px
+}
+
+.quiz-info:hover {
+    background-color: var(--orange2);
+}
+
+#home-page-footer{
+    position: absolute;
+    bottom: 20px;
+}
+
+/*Quiz CSS*/
+
+#mc-page-title, #sc-page-title{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#mc-header, #sc-header{
+    font-size: 2.5rem;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+#mc-page-info, #sc-page-info{
+    top: 50px;
+    right: 30px;
+    font-size: 14px;
+}
+
+#butterfly-image{
+    width: 700px;
+    margin: 20px auto;
+    border: 5px solid var(--green5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--green5);
+}
+
+#mc-quiz-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.butterfly-option{
+    background: linear-gradient(to bottom, var(--orange0), var(--orange1));
+    padding: 10px;
+    width: 250px;
+    border: 2px solid var(--orange3);
+    border-radius: 5px;
+    text-align: left;
+    font-size: 1.4em;
+    box-shadow: 0 0 2px var(--orange4);
+}
+
+input[type="radio"]{
+    scale: 1.5;
+    margin-right: 10px;
+    accent-color: var(--green3);
+}
+
+#success-container{
+    display: none;
+    z-index: 1000;
+}
+
+#success-box-div{
+    font-size: 35px;
+    background: linear-gradient(to bottom, var(--green1), var(--orange1));
+    width: 800px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    border: 4px solid var(--orange3);
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--orange5);
+    z-index: 1200;
+}
+
+#success-box{
+    font-size: 1em;
+    color: var(--orange5);
+    text-shadow: 1px 1px 2px white;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#restart-btn{
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid var(--green5);
+    border-radius: 5px;
+    background-color: var(--green2);
+    box-shadow: inset 0 0 5px white;
+    color: var(--orange5);
+    cursor: pointer;
+}
+
+#restart-btn:hover{
+    background-color: var(--green4);
+    color: white;
+}
+
+.score-div{
+    background-color: var(--orange0);
+    width: 20%;
+    height: 100px;
+    position: absolute;
+    border: 3px solid var(--green4);
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px var(--orange3);
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px white;
+    padding: 5px;
+}
+
+#mc-score-div{
+    top: 1050px;
+    right: 30px;
+}
+
+#sc-score-div{
+    top: 850px;
+    right: 30px;
+}
+
+#sc-choice-input{
+    width: 300px;
+    height: 40px;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    border: 2px solid var(--orange4);
+    border-radius: 10px;
+    background: linear-gradient(to bottom, var(--green0), var(--orange1));
+    box-shadow: inset 0 0 5px white;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+    margin: 20px auto;
+    color: var(--green5);
+    font-weight: bold;
+}
+
+#sc-choice-input::placeholder{
+    color: var(--green4);
+    font-weight: normal;
+}
+
+#sc-submit-btn{
+    margin-bottom: 10px;
+}
+
+/*Index Page CSS*/
+
+#index-page-header{
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#butterfly-tile-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1700px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.butterfly-tile{
+    background: linear-gradient(to bottom, var(--orange0), var(--orange2));
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: 3px solid var(--green5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--green5);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.butterfly-tile:hover{
+    transform: scale(1.02);
+}
+
+.butterfly-tile-img{
+    width: 250px;
+    height: auto;
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--green5);
+}
+.butterfly-tile-name{
+    font-size: 1.3em;
+    font-weight: bold;
+    color: black;
+    text-shadow: 1px 1px 2px white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.butterfly-tile-location{
+    font-size: 1.1em;
+    color: var(--green5);
+    text-shadow: 0 0 10px var(--green0);
+    margin-top: 5px;
+    text-align: center;
+}
+
+/*Media queries for all*/
+
+@media (max-width: 600px) { /*For small screen*/
+    #butterfly-background {
+        background-size: 200px 200px;
+    }
+    #home-page-title, #index-page-title {
+        font-size: 3em;
+        padding: 10px;
+    }
+    #home-page-info, #index-page-info {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+    }
+    #home-page-header{
+        font-size: 1.2em;
+        padding: 5px;
+    }
+    .quiz-choice-btn{
+        width: 200px;
+        font-size: 1em;
+    }
+    footer{
+        font-size: 0.7em;
+        padding: 5px;
+        width: 95%;
+        position: absolute;
+    }
+    .home-btn{
+        width: 50px;
+        height: 50px;
+        top: 40px;
+        left: 20px;
+    }
+    #butterfly-image{
+        width: 400px;
+    }
+    #mc-header, #sc-header{
+        font-size: 2rem;
+        padding: 5px;
+    }
+    #mc-tagline, #sc-tagline{
+        font-size: 1.7rem;
+        padding: 5px;
+    }
+    #success-box-div{
+        width: 90%;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+    .score-div{
+        width: 20%;
+        height: 80px;
+        font-size: 11px;
+    }
+    #mc-score-div{
+        top: 825px;
+        right: 10px;
+    }
+    #sc-score-div{
+        top: 680px;
+        right: 10px;
+    }
+    #sc-choice-input{
+        width: 200px;
+        height: 30px;
+        font-size: 1em;
+    }
+
+
+}
+
+@media (min-width: 2000px){ /*For large screen*/
+    #home-page-title, #index-page-title {
+        font-size: 7em;
+        padding: 30px;
+        border: 3px solid var(--orange3);
+    }
+    #home-page-header{
+        font-size: 2em;
+        padding: 15px;
+    }
+    #home-page-info, #index-page-info {
+        width: 70px;
+        height: 70px;
+        font-size: 18px;
+    }
+    #info-text{
+        font-size: 2em;
+        padding: 30px;
+    }
+    #mc-page-title{
+        font-size: 3.5rem;
+        padding: 20px;
+    }
+    #mc-page-info, #sc-page-info{
+        top: 80px;
+        right: 50px;
+        font-size: 18px;
+        width: 70px;
+        height: 70px;
+    }
+    #mc-header, #sc-header{
+        font-size: 3rem;
+    }
+    #mc-tagline, #sc-tagline{
+        font-size: 2.5rem;
+    }
+    #butterfly-image{
+        width: 1000px;
+    }
+    .butterfly-option{
+        width: 300px;
+        padding: 10px;
+        font-size: 1.5em;
+    }
+    #submit-btn{
+        font-size: 2.5em;
+        padding: 15px 30px;
+    }
+    #success-box-div{
+        width: 1000px;
+        font-size: 2em;
+        padding: 30px;
+    }
+    .score-div{
+        width: 400px;
+        height: 120px;
+        font-size: 20px;
+    }
+    #mc-score-div{
+        top: 1300px;
+        right: 50px;
+    }
+    #sc-score-div{
+        top: 1100px;
+        right: 50px;
+    }
+
+    #butterfly-tile-div{
+        max-width: 2200px;
+        gap: 30px;
+    }
+    .butterfly-tile{
+        width: 400px;
+        height: 400px;
+        padding: 20px;
+    }
+    .butterfly-tile-img{
+        width: 350px;
+    }
+    .butterfly-tile-name{
+        font-size: 1.8em;
+    }
+    .butterfly-tile-location{
+        font-size: 1.5em;
+    }
+}
