@@ -1,7 +1,32 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter, Routes, Route, Link } from 'react-router-dom'
-import { ArrowDownRight, ArrowRight, ExternalLink, Github, Linkedin, Mail, Menu, Moon, Shirt, Sparkles, Sun, Music, Music2, Music3, Phone } from 'lucide-react'
+import {
+  ArrowDownRight,
+  ArrowRight,
+  Atom,
+  Braces,
+  Code2,
+  ExternalLink,
+  Gamepad2,
+  Github,
+  Hash,
+  Layers3,
+  Linkedin,
+  Mail,
+  Menu,
+  Moon,
+  Phone,
+  Server,
+  Shirt,
+  Smartphone,
+  Sparkles,
+  Sun,
+  Zap,
+  Music,
+  Music2,
+  Music3,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -11,6 +36,7 @@ import '@/index.css'
 
 import LiveCoding from './projects/LiveCoding'
 import CuedMood from './projects/CuedMood'
+import Shoutfit from './projects/Shoutfit'
 
 const PROJECTS = [
   {
@@ -20,6 +46,7 @@ const PROJECTS = [
     tone: 'from-[var(--deep)] via-[var(--pink)] to-[var(--cream)]',
     type: 'mobile',
     href: '/projects/cued-mood',
+    github: 'https://github.com/KCarlisle1/Cued-Mood'
   },
   {
     title: 'ShoutFit',
@@ -27,7 +54,8 @@ const PROJECTS = [
     tags: ['React', 'Express.js', 'Hand-drawn'],
     tone: 'from-[var(--panel)] via-[var(--line)] to-[var(--pink)]',
     type: 'outfit',
-    href: '#contact',
+    href: '/projects/shoutfit',
+    github: 'https://github.com/KCarlisle1/ShoutFit'
   },
   {
     title: 'Finance Manager',
@@ -53,7 +81,8 @@ const PROJECTS = [
     tags: ['Arduino', 'C++', 'Electronics'],
     tone: 'from-[var(--line)] via-[var(--deep)] to-[var(--gold)]',
     type: 'lamp',
-    href: '#contact',
+    href: null,
+    github: 'https://github.com/KCarlisle1/Smart-Lamp',
   },
   {
     title: 'NaN Calculator',
@@ -61,7 +90,8 @@ const PROJECTS = [
     tags: ['React Native', 'Expo', 'JavaScript'],
     tone: 'from-[var(--line)] via-[var(--deep)] to-[var(--pink)]',
     type: 'nan',
-    href: '#contact',
+    href: null,
+    github: 'https://github.com/KCarlisle1/NaNCalculator',
   },
   {
     title: 'Data Driven App',
@@ -69,7 +99,8 @@ const PROJECTS = [
     tags: ['C++', 'OpenFrameworks', 'API'],
     tone: 'from-[var(--ink)] via-[var(--deep)] to-[var(--gold)]',
     type: 'cashregister',
-    href: '#contact',
+    href: null,
+    github: 'https://github.com/KCarlisle1/DataDrivenApp',
   },
   {
     title: 'Live Coding',
@@ -85,7 +116,8 @@ const PROJECTS = [
     tags: ['React', 'Tailwind', 'shadcn/ui'],
     tone: 'from-[var(--ink)] via-[var(--deep)] to-[var(--gold)]',
     type: 'portfolio',
-    href: '#contact',
+    href: null,
+    github: 'https://github.com/KCarlisle1/Personal-Portfolio2.0.git'
   },
   {
     title: 'More to be added',
@@ -93,7 +125,7 @@ const PROJECTS = [
     tags: ['Coming Soon', 'Ideas', 'Projects'],
     tone: 'from-[var(--panel)] via-[var(--line)] to-[var(--deep)]',
     type: 'more',
-    href: '#contact',
+    href: null,
   },
 ]
 
@@ -622,7 +654,7 @@ function App() {
                   label="C++"
                   size={80}
                   className="right-[40%] top-[5%] bg-[var(--cream)] animate-float"
-                  icon={<span className="text-lg">⚛</span>}
+                  icon={<Code2 size={28} strokeWidth={2.2} />}
                 />
 
                 <TechBubble
@@ -630,7 +662,7 @@ function App() {
                   size={150}
                   className="left-[16%] top-[17%] bg-[var(--plum)] animate-float"
                   style={{ animationDelay: '.6s' }}
-                  icon={<span className="text-lg">▣</span>}
+                  icon={<Atom size={34} strokeWidth={2} />}
                 />
 
                 <TechBubble
@@ -638,7 +670,7 @@ function App() {
                   size={108}
                   className="right-[10%] top-[21%] bg-[var(--pink)] animate-float"
                   style={{ animationDelay: '1s' }}
-                  icon={<span className="text-[11px] font-black">JS</span>}
+                  icon={ <div className="flex items-center justify-center rounded-md bg-[var(--ink)] px-1.5 py-1 text-[11px] font-black tracking-tight text-[var(--cream)]"> TS </div> }
                 />
 
                 <TechBubble
@@ -646,7 +678,7 @@ function App() {
                   size={100}
                   className="left-[2%] top-[46%] bg-[var(--gold)] animate-float"
                   style={{ animationDelay: '1.3s' }}
-                  icon={<span className="text-[11px] font-black">TS</span>}
+                  icon={<Zap size={30} strokeWidth={2.3} />}
                 />
 
                 <TechBubble
@@ -654,7 +686,7 @@ function App() {
                   size={74}
                   className="left-[29%] top-[50%] bg-[var(--lilac)] animate-float"
                   style={{ animationDelay: '.8s' }}
-                  icon={<span className="text-xs font-black">C#</span>}
+                  icon={<Hash size={27} strokeWidth={2.2} />}
                 />
 
                 <TechBubble
@@ -662,7 +694,7 @@ function App() {
                   size={92}
                   className="right-[35%] top-[32%] bg-[var(--cream)] animate-float"
                   style={{ animationDelay: '1.7s' }}
-                  icon={<span className="text-xs font-black">C++</span>}
+                  icon={<Layers3 size={29} strokeWidth={2.1} />}
                 />
 
                 <TechBubble
@@ -670,7 +702,7 @@ function App() {
                   size={130}
                   className="left-[23%] bottom-[3%] bg-[var(--gold)] animate-float"
                   style={{ animationDelay: '1.4s' }}
-                  icon={<span className="text-base">✦</span>}
+                  icon={<Server size={32} strokeWidth={2.1} />}
                 />
 
                 <TechBubble
@@ -678,7 +710,7 @@ function App() {
                   size={160}
                   className="left-[64%] bottom-[20%] bg-[var(--pink)] animate-float"
                   style={{ animationDelay: '2s' }}
-                  icon={<span className="text-xs font-black">V</span>}
+                  icon={ <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[var(--ink)] text-[11px] font-black text-[var(--cream)]"> JS </div> }
                 />
 
                 <TechBubble
@@ -686,7 +718,7 @@ function App() {
                   size={78}
                   className="right-[32%] bottom-[4%] bg-[var(--plum)] animate-float"
                   style={{ animationDelay: '1.1s' }}
-                  icon={<span className="text-xs font-black">S</span>}
+                  icon={<Gamepad2 size={27} strokeWidth={2.1} />}
                 />
 
                 <TechBubble
@@ -694,7 +726,7 @@ function App() {
                   size={98}
                   className="left-[0%] bottom-[10%] bg-[var(--cream)] animate-float"
                   style={{ animationDelay: '.4s' }}
-                  icon={<span className="text-xs font-black">N</span>}
+                  icon={<Smartphone size={29} strokeWidth={2.1} />}
                 />
               </div>
             </div>
@@ -751,55 +783,79 @@ function App() {
                         : ''
                     }>{tag}</Badge>)}
                   </div>
-                  {project.href?.startsWith('#') ? (
-                    <Button
-                      size="icon"
-                      variant="outline"
-                      onClick={() => scrollToId(project.href.slice(1))}
-                      aria-label={`Learn more about ${project.title}`}
-                      className={`shrink-0 ${
-                        lightPreview
-                          ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
-                          : 'group-hover:bg-[#c957bc]/10'
-                      }`}
-                    >
-                      <ArrowDownRight size={17} />
-                    </Button>
-                  ) : project.href?.endsWith('.html') ? (
-                    <Button
-                      size="icon"
-                      variant="outline"
-                      asChild
-                      aria-label={`View ${project.title} demo`}
-                      className={`shrink-0 ${
-                        lightPreview
-                          ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
-                          : 'group-hover:bg-[#c957bc]/10'
-                      }`}
-                    >
-                      <a
-                        href={`${import.meta.env.BASE_URL}${project.href.replace(/^\/+/, '')}`}
+                  <div className="flex shrink-0 items-center gap-2">
+                    {project.href?.startsWith('#') ? (
+                      <Button
+                        size="icon"
+                        variant="outline"
+                        onClick={() => scrollToId(project.href.slice(1))}
+                        aria-label={`Learn more about ${project.title}`}
+                        className={`shrink-0 ${
+                          lightPreview
+                            ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
+                            : 'group-hover:bg-[#c957bc]/10'
+                        }`}
                       >
                         <ArrowDownRight size={17} />
-                      </a>
-                    </Button>
-                  ) : (
-                    <Button
-                      size="icon"
-                      variant="outline"
-                      asChild
-                      aria-label={`View ${project.title} demo`}
-                      className={`shrink-0 ${
-                        lightPreview
-                          ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
-                          : 'group-hover:bg-[#c957bc]/10'
-                      }`}
-                    >
-                      <Link to={project.href}>
-                        <ArrowDownRight size={17} />
-                      </Link>
-                    </Button>
-                  )}
+                      </Button>
+                    ) : project.href?.endsWith('.html') ? (
+                      <Button
+                        size="icon"
+                        variant="outline"
+                        asChild
+                        aria-label={`View ${project.title} demo`}
+                        className={`shrink-0 ${
+                          lightPreview
+                            ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
+                            : 'group-hover:bg-[#c957bc]/10'
+                        }`}
+                      >
+                        <a
+                          href={`${import.meta.env.BASE_URL}${project.href.replace(/^\/+/, '')}`}
+                        >
+                          <ArrowDownRight size={17} />
+                        </a>
+                      </Button>
+                    ) : project.href ? (
+                      <Button
+                        size="icon"
+                        variant="outline"
+                        asChild
+                        aria-label={`View ${project.title} demo`}
+                        className={`shrink-0 ${
+                          lightPreview
+                            ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)] group-hover:border-[var(--gold)]'
+                            : 'group-hover:bg-[#c957bc]/10'
+                        }`}
+                      >
+                        <Link to={project.href}>
+                          <ArrowDownRight size={17} />
+                        </Link>
+                      </Button>
+                    ) : null}
+
+                    {project.github && (
+                      <Button
+                        size="icon"
+                        variant="outline"
+                        asChild
+                        aria-label={`View ${project.title} on GitHub`}
+                        className={`shrink-0 ${
+                          lightPreview
+                            ? 'border-[var(--gold)]/60 bg-[var(--cream)]/40 text-[var(--deep)] hover:bg-[var(--cream)] hover:text-[var(--deep)]'
+                            : 'hover:bg-[#c957bc]/10'
+                        }`}
+                      >
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Github size={17} />
+                        </a>
+                      </Button>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -916,6 +972,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/projects/live-coding" element={<LiveCoding />} />
         <Route path="/projects/cued-mood" element={<CuedMood />} />
+        <Route path="/projects/shoutfit" element={<Shoutfit />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>,
